@@ -1,3 +1,44 @@
+// class Circle {
+//   constructor(radius) {
+//     this.radius = radius;
+//   }
+
+//   getArea() {
+//     return Math.PI * this.radius ** 2;
+//   }
+
+//   toJson() {
+//     return JSON.stringify({ type: "circle", radius: this.radius });
+//   }
+// }
+
+// class Rectangle {
+//   constructor(width, height) {
+//     this.width = width;
+//     this.height = height;
+//   }
+
+//   getArea() {
+//     return this.width * this.height;
+//   }
+
+//   toJson() {
+//     return JSON.stringify({
+//       type: "rectangle",
+//       width: this.width,
+//       height: this.height
+//     });
+//   }
+// }
+
+// const shapes = [
+//   new Circle(5),
+//   new Rectangle(4, 6)
+// ];
+
+// shapes.forEach(shape => console.log("Area:", shape.getArea()));
+// shapes.forEach(shape => console.log("JSON:", shape.toJson()));
+
 class Shape {
   accept(visitor) {
     throw new Error("accept() must be implemented");

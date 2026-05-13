@@ -1,4 +1,25 @@
-// encapsulation
+// class Commute {
+//   travel(transportType) {
+//     if (transportType === "bus") {
+//       return 10;
+//     }
+
+//     if (transportType === "taxi") {
+//       return 5;
+//     }
+
+//     if (transportType === "car") {
+//       return 3;
+//     }
+
+//     throw new Error("Unknown transport type");
+//   }
+// }
+
+// const commute = new Commute();
+
+// console.log(commute.travel("taxi")); // 5
+// console.log(commute.travel// encapsulation
 class Commute {
     travel(transport) {
       return transport.travelTime();

@@ -1,3 +1,28 @@
+// class CSVParser {
+//   parseFile() {
+//     console.log("Loading file...");
+//     console.log("Parsing CSV data...");
+//     console.log("Validating data...");
+//     console.log("Saving parsed data...");
+//   }
+// }
+
+// class JSONParser {
+//   parseFile() {
+//     console.log("Loading file...");
+//     console.log("Parsing JSON data...");
+//     console.log("Validating data...");
+//     console.log("Saving parsed data...");
+//   }
+// }
+
+// const csv = new CSVParser();
+// csv.parseFile();
+
+// const json = new JSONParser();
+// json.parseFile();
+
+
 class DataParser {
   parseFile() {
     this.loadFile();

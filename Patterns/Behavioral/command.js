@@ -1,3 +1,20 @@
+// class Light {
+//   turnOn() {
+//     console.log("Light is ON");
+//   }
+
+//   turnOff() {
+//     console.log("Light is OFF");
+//   }
+// }
+
+// const light = new Light();
+
+// // Direct calls — no commands, no invoker, no undo
+// light.turnOn();   // Light is ON
+// light.turnOff();  // Light is OFF
+
+
 // Command Interface
 class Command {
   execute() {}
