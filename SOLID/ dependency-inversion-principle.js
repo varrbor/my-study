@@ -1,53 +1,36 @@
 // class MySQLDatabase {
-//   save(data) {
-//     console.log("Saving to MySQL:", data)
+//   connect() {
+//     console.log("MySQL connected");
 //   }
 // }
 
-// class UserService {
+// class App {
 //   constructor() {
-//     this.db = new MySQLDatabase() // ❌ hard dependency
-//   }
-
-//   createUser(user) {
-//     this.db.save(user)
+//     this.db = new MySQLDatabase();
 //   }
 // }
 
-// const service = new UserService()
-// service.createUser({ name: "Alice" })
-
-
-class Database {
-  save(data) {
-    throw new Error("save() must be implemented");
-  }
-}
-class MySQLDatabase extends Database {
-  save(data) {
-    console.log("Saving to MySQL:", data);
+class MySQLDatabase {
+  connect() {
+    console.log("MySQL connected");
   }
 }
 
-class MongoDatabase extends Database {
-  save(data) {
-    console.log("Saving to MongoDB:", data);
+class MongoDatabase {
+  connect() {
+    console.log("MongoDB connected");
   }
 }
-class UserService {
+
+class App {
   constructor(database) {
-    this.db = database; // depends on abstraction, not implementation
+    this.db = database;
   }
 
-  createUser(user) {
-    this.db.save(user);
+  start() {
+    this.db.connect();
   }
 }
-const mysql = new MySQLDatabase()
-const mongo = new MongoDatabase()
 
-const service1 = new UserService(mysql)
-const service2 = new UserService(mongo)
-
-service1.createUser({ name: "Alice" })
-service2.createUser({ name: "Bob" })
+const app = new App(new MongoDatabase());
+app.start();

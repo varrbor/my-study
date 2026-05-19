@@ -1,32 +1,26 @@
-// class Bird {
-//   fly() {
-//     return "I can fly";
+// class Worker {
+//   work() {}
+//   eat() {}
+// }
+
+// class Robot extends Worker {
+//   eat() {
+//     throw new Error("Robot doesn't eat");
 //   }
 // }
 
-// class Duck extends Bird {}
+class HumanWorker {
+  work() {
+    console.log("Working");
+  }
 
-// class Penguin extends Bird {
-//   fly() {
-//     throw new Error("I can't fly"); // ❌ порушення
-//   }
-// }
-
-// function makeBirdFly(bird) {
-//   return bird.fly();
-// }
-
-// makeBirdFly(new Duck());    // OK
-// makeBirdFly(new Penguin()); // 💥 crash
-
-class Bird {}
-
-class FlyingBird extends Bird {
-  fly() {
-    return "I can fly";
+  eat() {
+    console.log("Eating");
   }
 }
 
-class Duck extends FlyingBird {}
-
-class Penguin extends Bird {}
+class RobotWorker {
+  work() {
+    console.log("Working");
+  }
+}

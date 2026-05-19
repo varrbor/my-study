@@ -1,42 +1,26 @@
-// class Bird {
-//   fly() {}
-//   swim() {}
-//   walk() {}
-// }
-// class Duck extends Bird {
-//   fly() { return "flying" }
-//   swim() { return "swimming" }
-//   walk() { return "walking" }
+// class Worker {
+//   work() {}
+//   eat() {}
 // }
 
-// class Penguin extends Bird {
-//   fly() { throw new Error("I can't fly") }   // ❌ forced to implement
-//   swim() { return "swimming" }
-//   walk() { return "walking" }
+// class Robot extends Worker {
+//   eat() {
+//     throw new Error("Robot doesn't eat");
+//   }
 // }
 
-class Bird {}
+class HumanWorker {
+  work() {
+    console.log("Working");
+  }
 
-class Flying {
-  fly() {
-    return "I can fly"
+  eat() {
+    console.log("Eating");
   }
 }
 
-class Swimming {
-  swim() {
-    return "I can swim"
+class RobotWorker {
+  work() {
+    console.log("Working");
   }
 }
-
-class Walking {
-  walk() {
-    return "I can walk"
-  }
-}
-
-class Duck extends Bird {}
-Object.assign(Duck.prototype, new Flying(), new Swimming(), new Walking())
-
-class Penguin extends Bird {}
-Object.assign(Penguin.prototype, new Swimming(), new Walking())

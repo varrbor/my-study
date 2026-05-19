@@ -1,6 +1,36 @@
-// ===============================
-// SRP Example: Order Processing
-// ===============================
+// class OrderService {
+//   create(order) {
+//     // VALIDATION
+//     if (!order.items || order.items.length === 0) {
+//       throw new Error("Order must contain at least one item");
+//     }
+//     if (!order.userEmail.includes("@")) {
+//       throw new Error("Invalid email");
+//     }
+
+//     // SAVE TO DB
+//     console.log("Saving order to database...");
+//     console.log("Order saved:", order);
+
+//     // SEND EMAIL
+//     console.log(`Sending email to ${order.userEmail}: "Your order was created!"`);
+
+//     // LOGGING
+//     console.log("[INFO] Order created successfully");
+//   }
+// }
+
+// // RUN
+// const order = {
+//   userEmail: "customer@example.com",
+//   items: [
+//     { id: 1, name: "Laptop", price: 3000 },
+//     { id: 2, name: "Mouse", price: 100 }
+//   ]
+// };
+
+new OrderService().create(order);
+
 
 // 1. Validator — ONE responsibility: validate order
 class OrderValidator {
