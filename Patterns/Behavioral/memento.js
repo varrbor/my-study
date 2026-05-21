@@ -1,3 +1,41 @@
+          // +------------------+
+          // |     Editor       |
+          // +------------------+
+          // | - text : String  |
+          // +------------------+
+          // | + type(words)    |
+          // | + createMemento(): Memento |
+          // | + restore(memento: Memento) |
+          // | + getContent(): String      |
+          // +--------------+--------------+
+          //                |
+          //                | creates / restores
+          //                v
+          // +------------------+
+          // |     Memento      |
+          // +------------------+
+          // | - state : String |
+          // +------------------+
+          // | + getState(): String |
+          // +------------------+
+          //                ^
+          //                |
+          //                | stores
+          //                |
+          // +------------------+
+          // |     History      |
+          // +------------------+
+          // | - stack : Memento[] |
+          // +------------------+
+          // | + push(memento: Memento) |
+          // | + pop(): Memento         |
+          // +------------------+
+          
+// 🔹 Editor — Originator, створює та відновлює стан.
+// 🔹 Memento — зберігає стан об’єкта.
+// 🔹 History — Caretaker, керує стеком збережених станів.
+
+
 class Editor {
   constructor() {
     this.text = "";

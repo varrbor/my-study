@@ -53,8 +53,9 @@ username.setNext(password).setNext(email)
 
 const request = {
   username: "Bohdan",
-  password: "secret123",
-  email: "bohdan@example.com"
+  email: "bohdan@example.com",
+  password: "secret123"
+  
 }
 
 console.log("Result:", username.handle(request))
