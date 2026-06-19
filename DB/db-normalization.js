@@ -117,6 +117,19 @@ FROM student s
 JOIN student_class_1nf sc ON s.student_id = sc.student_id
 ORDER BY s.student_id;
 
+-- ------------------------------------------------------------
+-- RESULT OF THE JOIN ABOVE (1NF level):
+-- ------------------------------------------------------------
+-- student_id | advisor | room | class
+-- -----------+---------+------+----------------
+-- 1          | Jones   | 123  | Biology
+-- 1          | Jones   | 123  | Chemistry
+-- 1          | Jones   | 123  | Physics
+-- 2          | Smith   | 131  | English
+-- 2          | Smith   | 131  | Math
+-- 2          | Smith   | 131  | Library Science
+-- ------------------------------------------------------------
+
 
 -- ============================================================
 -- STEP 2: SECOND NORMAL FORM (2NF)
@@ -212,6 +225,19 @@ FROM student s
 JOIN student_class_2nf sc ON s.student_id = sc.student_id
 JOIN class_info ci         ON sc.class_name = ci.class_name
 ORDER BY s.student_id;
+
+-- ------------------------------------------------------------
+-- RESULT OF THE JOIN ABOVE (2NF level):
+-- ------------------------------------------------------------
+-- student_id | advisor | room | class_name       | classroom | teacher
+-- -----------+---------+------+------------------+-----------+-----------
+-- 1          | Jones   | 123  | Biology          | Room 101  | Dr. Adams
+-- 1          | Jones   | 123  | Chemistry        | Room 102  | Dr. Lee
+-- 1          | Jones   | 123  | Physics          | Room 103  | Dr. Kim
+-- 2          | Smith   | 131  | English          | Room 201  | Ms. Brown
+-- 2          | Smith   | 131  | Math             | Room 202  | Mr. Davis
+-- 2          | Smith   | 131  | Library Science  | Room 301  | Mr. White
+-- ------------------------------------------------------------
 
 
 -- ============================================================
@@ -313,6 +339,22 @@ JOIN advisor a             ON st.advisor_name = a.advisor_name
 JOIN student_class_2nf sc  ON st.student_id   = sc.student_id
 JOIN class_info ci         ON sc.class_name   = ci.class_name
 ORDER BY st.student_id;
+
+-- ------------------------------------------------------------
+-- RESULT OF THE JOIN ABOVE (3NF level):
+-- ------------------------------------------------------------
+-- student_id | advisor | advisor_room | class_name       | classroom | teacher
+-- -----------+---------+--------------+------------------+-----------+-----------
+-- 1          | Jones   | 123          | Biology          | Room 101  | Dr. Adams
+-- 1          | Jones   | 123          | Chemistry        | Room 102  | Dr. Lee
+-- 1          | Jones   | 123          | Physics          | Room 103  | Dr. Kim
+-- 2          | Smith   | 131          | English          | Room 201  | Ms. Brown
+-- 2          | Smith   | 131          | Math             | Room 202  | Mr. Davis
+-- 2          | Smith   | 131          | Library Science  | Room 301  | Mr. White
+--
+-- Same flat result as before normalization — but now every
+-- piece of data lives in exactly one place.
+-- ------------------------------------------------------------
 
 
 -- ============================================================
