@@ -36,6 +36,18 @@ VALUES
 -- View the unnormalized data:
 -- SELECT * FROM class;
 
+-- ------------------------------------------------------------
+-- HOW "class" LOOKS AFTER STEP 0 (0NF):
+-- ------------------------------------------------------------
+-- student_id | advisor | room | class1   | class2     | class3
+-- -----------+---------+------+----------+------------+----------------
+-- 1          | Jones   | 123  | Biology  | Chemistry  | Physics
+-- 2          | Smith   | 131  | English  | Math       | Library Science
+--
+-- Problem visible here: class1/class2/class3 hold the same KIND
+-- of data (a class name) spread across 3 columns instead of rows.
+-- ------------------------------------------------------------
+
 
 -- ============================================================
 -- STEP 1: FIRST NORMAL FORM (1NF)
@@ -72,6 +84,28 @@ INSERT INTO student_class_1nf (student_id, class) VALUES
     (2, 'English'),
     (2, 'Math'),
     (2, 'Library Science');
+
+-- ------------------------------------------------------------
+-- HOW TABLES LOOK AFTER STEP 1 (1NF):
+-- ------------------------------------------------------------
+-- student:
+-- student_id | advisor | room
+-- -----------+---------+------
+-- 1          | Jones   | 123
+-- 2          | Smith   | 131
+--
+-- student_class_1nf:
+-- student_id | class
+-- -----------+----------------
+-- 1          | Biology
+-- 1          | Chemistry
+-- 1          | Physics
+-- 2          | English
+-- 2          | Math
+-- 2          | Library Science
+--
+-- Repeating group is gone: one row per (student, class) pair.
+-- ------------------------------------------------------------
 
 -- JOIN to reconstruct the original flat view (1NF level):
 SELECT
@@ -133,6 +167,39 @@ INSERT INTO student_class_2nf (student_id, class_name) VALUES
     (2, 'Math'),
     (2, 'Library Science');
 
+-- ------------------------------------------------------------
+-- HOW TABLES LOOK AFTER STEP 2 (2NF):
+-- ------------------------------------------------------------
+-- student:                                  (unchanged from 1NF)
+-- student_id | advisor | room
+-- -----------+---------+------
+-- 1          | Jones   | 123
+-- 2          | Smith   | 131
+--
+-- class_info:                               (NEW - class-only data)
+-- class_name        | classroom | teacher
+-- -------------------+-----------+-----------
+-- Biology            | Room 101  | Dr. Adams
+-- Chemistry          | Room 102  | Dr. Lee
+-- Physics            | Room 103  | Dr. Kim
+-- English            | Room 201  | Ms. Brown
+-- Math               | Room 202  | Mr. Davis
+-- Library Science    | Room 301  | Mr. White
+--
+-- student_class_2nf:                        (just the link now)
+-- student_id | class_name
+-- -----------+----------------
+-- 1          | Biology
+-- 1          | Chemistry
+-- 1          | Physics
+-- 2          | English
+-- 2          | Math
+-- 2          | Library Science
+--
+-- classroom/teacher now stored ONCE per class, not once per
+-- (student, class) pair.
+-- ------------------------------------------------------------
+
 -- JOIN to reconstruct the flat view (2NF level):
 SELECT
     s.student_id,
@@ -190,6 +257,45 @@ INSERT INTO student_3nf (advisor_name) VALUES
 -- Note: class_info and student_class_2nf are already in 3NF —
 -- classroom and teacher depend only directly on class_name,
 -- not on each other. They are reused as-is.
+
+-- ------------------------------------------------------------
+-- HOW TABLES LOOK AFTER STEP 3 (3NF) — final schema, 4 tables:
+-- ------------------------------------------------------------
+-- advisor:                                  (NEW - advisor-only data)
+-- advisor_name | room
+-- -------------+------
+-- Jones        | 123
+-- Smith        | 131
+--
+-- student_3nf:                              (room removed, just FK now)
+-- student_id | advisor_name
+-- -----------+-------------
+-- 1          | Jones
+-- 2          | Smith
+--
+-- class_info:                               (unchanged from 2NF)
+-- class_name        | classroom | teacher
+-- -------------------+-----------+-----------
+-- Biology            | Room 101  | Dr. Adams
+-- Chemistry          | Room 102  | Dr. Lee
+-- Physics            | Room 103  | Dr. Kim
+-- English            | Room 201  | Ms. Brown
+-- Math               | Room 202  | Mr. Davis
+-- Library Science    | Room 301  | Mr. White
+--
+-- student_class_2nf:                        (unchanged from 2NF)
+-- student_id | class_name
+-- -----------+----------------
+-- 1          | Biology
+-- 1          | Chemistry
+-- 1          | Physics
+-- 2          | English
+-- 2          | Math
+-- 2          | Library Science
+--
+-- room now stored ONCE per advisor, not once per student. If
+-- Jones moves offices, only 1 row in "advisor" needs updating.
+-- ------------------------------------------------------------
 
 
 -- ============================================================
