@@ -1,0 +1,3 @@
+# AWS vs. other Cloud Providers (Google and Azure)
+
+AWS, Microsoft Azure, and Google Cloud Platform (GCP) are the three leading cloud providers, offering largely overlapping core services (compute, storage, databases, networking) under different names and pricing models. AWS has the largest market share and broadest service catalog; Azure integrates tightly with Microsoft enterprise tools (Windows Server, Active Directory, Office 365); GCP is often favored for data analytics and machine learning. Choice often comes down to existing tooling, team expertise, and specific service strengths rather than fundamental capability differences.
