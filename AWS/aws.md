@@ -5,19 +5,18 @@ S3 - Simple Storage Service
 Regions & AZs - Availability Zones
 Managed vs Unmanaged Services
 EC2 - Elastic Compute Cloud
+EC2 Snapshots - EBS backups
 EBS - Elastic Block Store
 EFS - Elastic File System
 VPC - Virtual Private Cloud
-NACLs - Network Access Control Lists
+NACLs (Network Access Control Lists) are subnet-level firewalls in AWS that control inbound and outbound network traffic in a VPC.
+AWS Security Group (SG) is a virtual firewall that controls inbound and outbound traffic for resources such as EC2 instances. It operates at the network interface (ENI) level.
 Load Balancers
 Lambda - serverless compute
-Lambda Basics
 Elasticity
 ASG - Auto Scaling Group
-Auto Scaling
 CloudWatch - monitoring & alarms
 CloudTrail - activity logging
-CloudTrail
 RDS - Relational Database Service
 DynamoDB - NoSQL database
 Bedrock - generative AI
