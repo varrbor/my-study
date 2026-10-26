@@ -2,7 +2,7 @@
 
 After the requirements, put numbers on the scale. These figures decide the throughput, bandwidth and storage the design has to handle.
 
-📄 <a href="../../assets/capasity-estimation/CheatSheet.pdf" target="_blank" rel="noopener noreferrer">Capacity Estimation Cheat Sheet (PDF)</a>
+📄 [Capacity Estimation Cheat Sheet (PDF)](https://github.com/varrbor/my-study/blob/master/assets/capasity-estimation/CheatSheet.pdf) · [download](https://raw.githubusercontent.com/varrbor/my-study/master/assets/capasity-estimation/CheatSheet.pdf)
 
 ## 1. Inputs: Quantify Expected Scale
 
