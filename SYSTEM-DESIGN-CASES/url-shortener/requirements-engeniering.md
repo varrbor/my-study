@@ -64,22 +64,22 @@ Find the 1–2 NFRs the interviewer cares about most. They set the system attrib
 ## Resources
 
 **Requirements step (FR / NFR)**
-- [Hello Interview – Delivery Framework](https://hellointerview.com/learn/system-design/in-a-hurry/delivery): ~5 min on requirements: functional first, then non-functional, then scale.
-- [DesignGurus – Functional vs Non-functional Requirements](https://www.designgurus.io/course-play/grokking-the-system-design-interview/doc/functional-vs-nonfunctional-requirements)
-- [Exponent – Complete System Design Interview Guide](https://www.tryexponent.com/blog/system-design-interview-guide): ~8 min clarifying the problem, common NFRs.
-- [AlgoMaster – System Design Interview Tips](https://blog.algomaster.io/p/system-design-interview-tips): questions to ask about NFRs (read- vs write-heavy, acceptable downtime).
+- <a href="https://hellointerview.com/learn/system-design/in-a-hurry/delivery" target="_blank" rel="noopener noreferrer">Hello Interview – Delivery Framework</a>: ~5 min on requirements: functional first, then non-functional, then scale.
+- <a href="https://www.designgurus.io/course-play/grokking-the-system-design-interview/doc/functional-vs-nonfunctional-requirements" target="_blank" rel="noopener noreferrer">DesignGurus – Functional vs Non-functional Requirements</a>
+- <a href="https://www.tryexponent.com/blog/system-design-interview-guide" target="_blank" rel="noopener noreferrer">Exponent – Complete System Design Interview Guide</a>: ~8 min clarifying the problem, common NFRs.
+- <a href="https://blog.algomaster.io/p/system-design-interview-tips" target="_blank" rel="noopener noreferrer">AlgoMaster – System Design Interview Tips</a>: questions to ask about NFRs (read- vs write-heavy, acceptable downtime).
 
 **Availability vs consistency (CAP)**
-- [AlgoMaster – CAP Theorem Explained](https://blog.algomaster.io/p/cap-theorem-explained)
-- [ByteByteGo system-design-101 – CAP theorem](https://www.mintlify.com/ByteByteGoHq/system-design-101/guides/database/cap-theorem)
-- [Level Up Coding – PACELC Clearly Explained](https://levelupcoding.beehiiv.com/p/pacelc-theorem-clearly-explained): with no partition, you still trade latency against consistency.
+- <a href="https://blog.algomaster.io/p/cap-theorem-explained" target="_blank" rel="noopener noreferrer">AlgoMaster – CAP Theorem Explained</a>
+- <a href="https://www.mintlify.com/ByteByteGoHq/system-design-101/guides/database/cap-theorem" target="_blank" rel="noopener noreferrer">ByteByteGo system-design-101 – CAP theorem</a>
+- <a href="https://levelupcoding.beehiiv.com/p/pacelc-theorem-clearly-explained" target="_blank" rel="noopener noreferrer">Level Up Coding – PACELC Clearly Explained</a>: with no partition, you still trade latency against consistency.
 
 **Expected scale (back-of-the-envelope)**
-- [ByteByteGo – Back-of-the-envelope Estimation](https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation): worked Twitter example, DAU → QPS → storage.
-- [System Design Space – Back-of-Envelope Estimation](https://system-design.space/en/chapter/back-of-envelope-estimation/)
+- <a href="https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation" target="_blank" rel="noopener noreferrer">ByteByteGo – Back-of-the-envelope Estimation</a>: worked Twitter example, DAU → QPS → storage.
+- <a href="https://system-design.space/en/chapter/back-of-envelope-estimation/" target="_blank" rel="noopener noreferrer">System Design Space – Back-of-Envelope Estimation</a>
 
 **Free deep references and books**
-- [System Design Primer (GitHub)](https://github.com/donnemartin/system-design-primer): availability "nines" tables, CAP, consistency patterns, vertical vs horizontal scaling.
+- <a href="https://github.com/donnemartin/system-design-primer" target="_blank" rel="noopener noreferrer">System Design Primer (GitHub)</a>: availability "nines" tables, CAP, consistency patterns, vertical vs horizontal scaling.
 - Alex Xu, *System Design Interview Vol. 1*, ch. 2–3: estimation and the interview framework.
 - Martin Kleppmann, *Designing Data-Intensive Applications*, ch. 1 (reliability, scalability) and ch. 9 (linearizability, consistency).
 
